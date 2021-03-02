@@ -23,7 +23,7 @@ jobs:
         command: |
           wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
           chmod +x /bin/hadolint
-
+  
     - save_cache:
         paths:
         - ./venv
@@ -33,6 +33,12 @@ jobs:
         name: Run Hadolint 
         command: |
           hadolint Dockerfile
+
+    - run:
+        name: Run PyLint
+        command: |
+          . venv/bin/activate
+          pylint routes.py
 
 workflows:
   version: 2
