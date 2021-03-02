@@ -12,7 +12,7 @@ COPY . routes.py /app/
 RUN pip --no-cache-dir install -r requirements.txt
 
 #Expose the port
-EXPOSE 80
+# EXPOSE 80
 
 #Run Command
-CMD ["python", "routes.py"]
+CMD ["/bin/bash", "-c", "python routes.py"]
