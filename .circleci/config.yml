@@ -82,7 +82,7 @@ jobs:
     - run:
         name: Check Rolling Update
         command: |
-          kubectl rollout status deployments/shubhamcapstone
+          kubectl rollout status deployments/shubham-capstone
 
 
 workflows:
