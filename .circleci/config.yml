@@ -55,13 +55,13 @@ jobs:
     - run:
         name: Deploy App to EKS
         command: |
-          sh "aws eks --region ap-south-1 update-kubeconfig --name shubhamcapstone"
-          sh "kubectl config use-context arn:aws:eks:ap-south-1:673823253587:cluster/shubhamcapstone"
-          sh "kubectl apply -f k8s.yaml"
-          sh "kubectl get nodes"
-          sh "kubectl get deployments"
-          sh "kubectl get pod -o wide"
-          sh "kubectl get service/shubham-capstone"
+          aws eks --region ap-south-1 update-kubeconfig --name shubhamcapstone
+          # sh "kubectl config use-context arn:aws:eks:ap-south-1:673823253587:cluster/shubhamcapstone"
+          # sh "kubectl apply -f k8s.yaml"
+          # sh "kubectl get nodes"
+          # sh "kubectl get deployments"
+          # sh "kubectl get pod -o wide"
+          # sh "kubectl get service/shubham-capstone"
 
 
 workflows:
