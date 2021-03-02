@@ -46,6 +46,7 @@ jobs:
         command: |
           docker build -t shubham-capstone .
           echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+          docker tag shubham-capstone shubhammapara/shubham-capstone
           docker push shubhammapara/shubham-capstone
 
     # - run:
