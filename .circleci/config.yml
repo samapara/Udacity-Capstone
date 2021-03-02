@@ -73,6 +73,16 @@ jobs:
           kubectl get deployments
           kubectl get pod -o wide
           kubectl get service/shubham-capstone
+  
+    - run:
+        name: Check App Status
+        command: |
+          curl abba1c8a1b06a40b5916634bed1c4970-757818178.ap-south-1.elb.amazonaws.com
+
+    - run:
+        name: Check Rolling Update
+        command: |
+          kubectl rollout status deployments/shubhamcapstone
 
 
 workflows:
