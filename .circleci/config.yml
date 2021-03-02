@@ -28,10 +28,10 @@ jobs:
         name: Install kubectl
         command: |
           curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-          sudo mkdir -p ~/.local/bin/kubectl
-          sudo mv ./kubectl ~/.local/bin/kubectl
-          echo "export PATH="~/.local/bin/kubectl:$PATH"" >> $BASH_ENV
-          source $BASH_ENV
+          # sudo mkdir -p ~/.local/bin/kubectl
+          sudo mv ./kubectl /usr/local/bin/kubectl
+          # echo "export PATH="~/.local/bin/kubectl:$PATH"" >> $BASH_ENV
+          # source $BASH_ENV
 
     - run:
         name: check kubectl
