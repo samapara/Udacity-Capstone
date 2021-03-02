@@ -6,7 +6,31 @@ jobs:
       - image: python:3.7.3-stretch
     working_directory: ~/repo
     steps:
-      - run:
-          name: Test
-          command: |
-            echo "Hi CircleCi"
+    - checkout
+    
+    - restore_cache:
+        keys: 
+          - python_deps-{{ checksum "requirements.txt"}}
+
+    - run:
+        name: Install Dependencies
+        command: |
+          python -m venv venv
+          . venv/bin/activate
+          make install
+
+    - run:
+        name: Install Hadolint
+        command: |
+          wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
+          chmod +x /bin/hadolint
+
+    - save_cache:
+        paths:
+        - ./venv
+        key: python_deps-{{ checksum "requirements.txt"}}
+
+    - run:
+        name: Run Hadolint 
+        command: |
+          hadolint Dockerfile
