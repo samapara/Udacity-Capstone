@@ -35,7 +35,7 @@ jobs:
 
     - run:
         name: check kubectl
-        command: kubectl version
+        command: sudo kubectl version
     
     - run:
         name: Install awscli
