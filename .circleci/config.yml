@@ -34,3 +34,9 @@ jobs:
         name: Run Hadolint 
         command: |
           hadolint Dockerfile
+
+workflows:
+  build-and-lint:
+    jobs:
+      - build
+
