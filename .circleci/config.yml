@@ -30,10 +30,10 @@ jobs:
         - ./venv
         key: python_deps-{{ checksum "requirements.txt"}}
 
-    - run:
-        name: Run Hadolint 
-        command: |
-          hadolint Dockerfile
+    # - run:
+    #     name: Run Hadolint 
+    #     command: |
+    #       hadolint Dockerfile
 
     # - run:
     #     name: Run PyLint
