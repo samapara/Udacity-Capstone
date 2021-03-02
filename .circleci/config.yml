@@ -46,7 +46,7 @@ jobs:
         command: |
           docker build -t shubham-capstone .
           echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-
+          docker push shubhammapara/shubham-capstone
 
     # - run:
     #     name: Deploy App to EKS
