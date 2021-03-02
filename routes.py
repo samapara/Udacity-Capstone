@@ -13,10 +13,12 @@ def index():
 
 @app.route('/symbol.html')
 def symbol():
+    """Symbol Page"""
     return render_template('symbol.html', the_title='Tiger As Symbol')
 
 @app.route('/myth.html')
 def myth():
+    """Myth Page"""
     return render_template('myth.html', the_title='Tiger in Myth and Legend')
 
 if __name__ == '__main__':
