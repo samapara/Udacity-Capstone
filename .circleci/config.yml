@@ -9,8 +9,7 @@ jobs:
     - setup_remote_docker
     
     - restore_cache:
-        keys: 
-          - python_deps-{{ checksum "requirements.txt"}}
+        key: v1-dependencies-{{ checksum "requirements.txt" }}
 
     - run:
         name: Install Dependencies
@@ -27,8 +26,8 @@ jobs:
   
     - save_cache:
         paths:
-        - ./venv
-        key: python_deps-{{ checksum "requirements.txt"}}
+          - venv/
+        key: v1-dependencies-{{ checksum "requirements.txt" }}
 
     # - run:
     #     name: Run Hadolint 
