@@ -84,7 +84,6 @@ jobs:
         command: |
           kubectl rollout status deployments/shubham-capstone
 
-
 workflows:
   build-and-lint:
     jobs:
