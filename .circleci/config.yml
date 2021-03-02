@@ -31,8 +31,8 @@ jobs:
           # sudo mkdir -p ~/.local/bin/kubectl
           sudo mv ./kubectl /usr/local/bin/
           ls /usr/local/bin/
-          # echo "export PATH="~/.local/bin/kubectl:$PATH"" >> $BASH_ENV
-          # source $BASH_ENV
+          echo "export PATH="/usr/local/bin/kubectl:$PATH"" >> $BASH_ENV
+          source $BASH_ENV
 
     # - run:
         # name: check kubectl
