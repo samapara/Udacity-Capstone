@@ -9,7 +9,7 @@ COPY . routes.py /app/
 
 #Run Install Deps command
 #To produce lint error do not add --no-cache-dir
-RUN pip --no-cache-dir install -r requirements.txt
+RUN pip install -r requirements.txt
 
 #Expose the port
 # EXPOSE 80
