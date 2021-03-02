@@ -1,5 +1,4 @@
-version: 2
-
+version: 2.1
 jobs:
   build:
     docker:
@@ -36,6 +35,7 @@ jobs:
           hadolint Dockerfile
 
 workflows:
+  version: 2
   build-and-lint:
     jobs:
       - build
