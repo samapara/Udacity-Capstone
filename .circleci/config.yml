@@ -8,9 +8,9 @@ jobs:
     - checkout
     - setup_remote_docker
     
-    - restore_cache:
-        keys: 
-          - python_deps-{{ checksum "requirements.txt"}}
+    # - restore_cache:
+    #     keys: 
+    #       - python_deps-{{ checksum "requirements.txt"}}
 
     - run:
         name: Install Dependencies
