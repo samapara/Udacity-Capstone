@@ -72,11 +72,11 @@ jobs:
         command: |
           aws eks --region $AWS_REGION update-kubeconfig --name shubhamcapstone
           kubectl config use-context arn:aws:eks:ap-south-1:673823253587:cluster/shubhamcapstone
-          # sh "kubectl apply -f k8s.yaml"
-          # sh "kubectl get nodes"
-          # sh "kubectl get deployments"
-          # sh "kubectl get pod -o wide"
-          # sh "kubectl get service/shubham-capstone"
+          kubectl apply -f k8s.yaml
+          kubectl get nodes
+          kubectl get deployments
+          kubectl get pod -o wide
+          kubectl get service/shubham-capstone
 
 
 workflows:
