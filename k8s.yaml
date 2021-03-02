@@ -52,16 +52,15 @@ spec:
             memory: 32Mi
             cpu: 200m
         ports:
-        - containerPort: 80
+        - containerPort: 5000
         livenessProbe:
           failureThreshold: 3
           httpGet:
             path: /
             scheme: HTTP
-            port: 8000
+            port: 5000
           periodSeconds: 10
           successThreshold: 1
-          failureThreshold: 2
           timeoutSeconds: 1
 
 ---
@@ -76,12 +75,8 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 8000
-      targetPort: 8000
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 443
+      port: 5000
+      targetPort: 5000
       
 ---
 kind: HorizontalPodAutoscaler
