@@ -1,3 +1,4 @@
+""" Main file """
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -5,6 +6,9 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index.html')
 def index():
+    """
+        Index method
+    """
     return render_template('index.html', the_title='Tiger Home Page')
 
 @app.route('/symbol.html')
