@@ -34,9 +34,9 @@ jobs:
           echo "export PATH="/usr/local/bin/kubectl:$PATH"" >> $BASH_ENV
           source $BASH_ENV
 
-    # - run:
-        # name: check kubectl
-        # command: sudo kubectl version
+    - run:
+        name: check kubectl
+        command: kubectl version
     
     - run:
         name: Install awscli
