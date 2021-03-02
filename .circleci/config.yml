@@ -38,11 +38,11 @@ jobs:
         command: |
           hadolint Dockerfile
 
-    - run:
-        name: Run PyLint
-        command: |
-          . venv/bin/activate
-          pylint routes.py
+    # - run:
+    #     name: Run PyLint
+    #     command: |
+    #       . venv/bin/activate
+    #       pylint routes.py
 
     - run:
         name: Build and Push Docker Image
