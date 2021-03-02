@@ -1,5 +1,5 @@
 #Use python 3.7.3 docker image
-FROM python:3.7.3-stretch
+FROMpython:3.7.3-stretch
 
 #Set working directory
 WORKDIR /app
