@@ -64,6 +64,11 @@ jobs:
           docker push shubhammapara/shubham-capstone
 
     - run:
+        name: Security Scan
+        command: docker scan --accept-license --file ./Dockerfile shubhammapara/shubham-capstone 
+
+
+    - run:
         name: Deploy App to EKS
         command: |
           aws eks --region $AWS_REGION update-kubeconfig --name shubhamcapstone

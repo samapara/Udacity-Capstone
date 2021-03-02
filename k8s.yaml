@@ -91,24 +91,3 @@ spec:
   minReplicas: 2
   maxReplicas: 5
   targetCPUUtilizationPercentage: 80
-
-# ---
-# apiVersion: extensions/v1beta1
-# kind: Ingress
-# metadata:
-#   name: shubham-capstone
-#   annotations:
-#     ingress.kubernetes.io/force-ssl-redirect: "true"
-#     kubernetes.io/ingress.class: "ingress-nginx"
-    #Limit app to my personal IP
-    #nginx.ingress.kubernetes.io/whitelist-source-range: "IP/32"
-
-# spec:
-#   rules:
-#   - host: bcrypt.darkarosh.net
-#     http:
-#       paths:
-#       - path: /
-#         backend:
-#           serviceName: shubham-capstone
-#           servicePort: 9080
