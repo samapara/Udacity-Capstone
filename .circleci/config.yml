@@ -55,8 +55,8 @@ jobs:
     - run:
         name: Deploy App to EKS
         command: |
-          aws eks --region ap-south-1 update-kubeconfig --name shubhamcapstone
-          # sh "kubectl config use-context arn:aws:eks:ap-south-1:673823253587:cluster/shubhamcapstone"
+          aws eks --region $AWS_REGION update-kubeconfig --name shubhamcapstone
+          kubectl config use-context arn:aws:eks:ap-south-1:673823253587:cluster/shubhamcapstone
           # sh "kubectl apply -f k8s.yaml"
           # sh "kubectl get nodes"
           # sh "kubectl get deployments"
